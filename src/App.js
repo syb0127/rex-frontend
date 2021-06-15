@@ -72,7 +72,6 @@ export default class SignupScreen extends React.Component {
 
 /*import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
 import { Platform, StatusBar, StyleSheet, View, SafeAreaView } from 'react-native';
 import { useFonts } from '@use-expo/font';
 import { AppLoading, Notifications } from 'expo';
