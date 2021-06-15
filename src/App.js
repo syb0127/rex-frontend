@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Component} from "react";
 //react-native-community/async-storage
 import { StyleSheet, View, Text, TextInput, Button, Alert, Dimensions, TouchableOpacity, AsyncStorage, ScrollView} from 'react-native';
-import * as firebase from 'firebase';
-import Colors from '../Colors'
-import 'firebase/firestore';
-import 'firebase/storage';
+//import * as firebase from 'firebase';
+import Colors from '/Colors';
+//import firestore from 'firebase';
+//import storage from 'firebase';
 import axios from 'axios';
 
 /*const api = axios.create({
