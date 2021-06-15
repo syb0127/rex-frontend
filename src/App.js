@@ -62,6 +62,7 @@ export default class SignupScreen extends React.Component {
 
               <TouchableOpacity title="Back to Login" onPress={this.onBackToLoginPress} style={styles.nofillbutton}>
                   <Text style={styles.nofillbuttontext}> Back to Login </Text>
+                  <Text style={styles.nofillbuttontext}> Testing line </Text>
               </TouchableOpacity>
               </ScrollView>
 
