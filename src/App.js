@@ -3,7 +3,7 @@ import { Component} from "react";
 //react-native-community/async-storage
 import { StyleSheet, View, Text, TextInput, Button, Alert, Dimensions, TouchableOpacity, AsyncStorage, ScrollView} from 'react-native';
 //import * as firebase from 'firebase';
-import Colors from '/Colors';
+import Colors from './Colors';
 //import firestore from 'firebase';
 //import storage from 'firebase';
 import axios from 'axios';
@@ -13,18 +13,26 @@ import axios from 'axios';
 })*/
 
 export default class SignupScreen extends React.Component {
-
     constructor(props) {
         super(props);
         /*api.get('/').then(res => {
           console.log(res.data)
-        })
+        })*/
         this.state = {
             name: "",
             password: "",
             uuid: '',
-        };*/
+        };
       }
+
+      onSignupPress = event => {
+        event.preventDefault();
+        axios.post(`http://127.0.0.1:5000/login/`, {username: this.state.name, password: this.state.password}, {headers: { 'content-type': 'application/x-www-form-urlencoded' }})
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+        }
 
       render() {
       return (
@@ -35,7 +43,7 @@ export default class SignupScreen extends React.Component {
 
               <TextInput style={styles.bodytext}
                   value={this.state.name}
-                  onChangeText={(text) => { this.setState({name: text}) }}
+                  onChangeText={(text) => { this.setState({...this.state, name: text}) }}
                   placeholder="Name"
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -46,7 +54,7 @@ export default class SignupScreen extends React.Component {
 
               <TextInput style={styles.bodytext}
                   value={this.state.password}
-                  onChangeText={(text) => { this.setState({password: text}) }}
+                  onChangeText={(text) => { this.setState({...this.state, password: text}) }}
                   placeholder="Password"
                   secureTextEntry={true}
                   autoCapitalize="none"
@@ -69,7 +77,46 @@ export default class SignupScreen extends React.Component {
           </View>
       )
   }
+
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: "#eaeaea"
+  },
+  title: {
+    marginTop: 16,
+    paddingVertical: 8,
+    borderWidth: 4,
+    borderColor: "#20232a",
+    borderRadius: 6,
+    backgroundColor: "#61dafb",
+    color: "#20232a",
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold"
+  },
+  headstyle:{
+
+  },
+  bodytext:{
+
+  },
+  btn:{
+
+  },
+  buttontext:{
+
+  },
+  nofillbutton:{
+
+  },
+  nofillbuttontext:{
+
+  }
+});
 
 /*import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
