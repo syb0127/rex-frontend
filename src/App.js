@@ -7,6 +7,7 @@ import Colors from './Colors';
 //import firestore from 'firebase';
 //import storage from 'firebase';
 import axios from 'axios';
+import Store from './Store';
 
 /*const api = axios.create({
   baseURL: 'http://localhost:5000/'
@@ -36,45 +37,9 @@ export default class SignupScreen extends React.Component {
 
       render() {
       return (
-          <View style={styles.container}>
-          <ScrollView>
-
-              <Text style={styles.headerstyle}>Signup</Text>
-
-              <TextInput style={styles.bodytext}
-                  value={this.state.name}
-                  onChangeText={(text) => { this.setState({...this.state, name: text}) }}
-                  placeholder="Name"
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  placeholderTextColor={Colors.grey }
-              />
-
-              <View style={{paddingTop:10}} />
-
-              <TextInput style={styles.bodytext}
-                  value={this.state.password}
-                  onChangeText={(text) => { this.setState({...this.state, password: text}) }}
-                  placeholder="Password"
-                  secureTextEntry={true}
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  placeholderTextColor={Colors.grey }
-              />
-
-
-              <TouchableOpacity title="Signup" onPress={this.onSignupPress} style={styles.btn}>
-                <Text style={styles.buttontext}> SIGNUP </Text>
-              </TouchableOpacity>
-
-
-              <TouchableOpacity title="Back to Login" onPress={this.onBackToLoginPress} style={styles.nofillbutton}>
-                  <Text style={styles.nofillbuttontext}> Back to Login </Text>
-                  <Text style={styles.nofillbuttontext}> Testing line </Text>
-              </TouchableOpacity>
-              </ScrollView>
-
-          </View>
+        <Store>
+          
+        </Store>
       )
   }
 
